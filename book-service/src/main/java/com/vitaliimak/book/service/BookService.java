@@ -18,6 +18,9 @@ public class BookService {
     }
 
     public Book save(Book book) {
+//        book.getAuthors().stream()
+//                .
+
         return bookRepository.save(book);
     }
 }

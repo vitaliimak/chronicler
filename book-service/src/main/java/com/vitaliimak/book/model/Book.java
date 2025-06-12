@@ -3,26 +3,28 @@ package com.vitaliimak.book.model;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @Data
-@Document(value = "book")
+@Document(collection = "book")
 @RequiredArgsConstructor
 public class Book {
 
     @Id
     private String id;
+    // Different languages
     private final String title;
-    // Should be Author object
-    private final List<String> authors;
+    @DBRef(lazy = true)
+    private final List<Author> authors;
     private String description;
     private List<String> genres;
     private String isbn;
     // Might be only year, and additional month and day
-    private Date publicationDate;
+    private LocalDate publicationDate;
     private String language;
     // series
     // Image, cover
