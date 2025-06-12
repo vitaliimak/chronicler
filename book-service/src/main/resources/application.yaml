@@ -7,3 +7,8 @@ spring:
     mongodb:
       uri: "mongodb://user:pass@localhost:27017"
       database: "books"
+springdoc:
+  swagger-ui:
+    path: "/swagger-ui"
+  api-docs:
+    path: "/api-docs"
