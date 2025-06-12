@@ -1,0 +1,9 @@
+server:
+  port: 9191
+spring:
+  application:
+    name: "book-service"
+  data:
+    mongodb:
+      uri: "mongodb://user:pass@localhost:27017"
+      database: "books"

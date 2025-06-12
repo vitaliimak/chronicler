@@ -1,6 +1,5 @@
 package com.vitaliimak.book.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.annotation.Id;
@@ -10,14 +9,14 @@ import java.util.Date;
 import java.util.List;
 
 @Data
-@Document
-@AllArgsConstructor
+@Document(value = "book")
 @RequiredArgsConstructor
 public class Book {
 
     @Id
     private String id;
     private final String title;
+    // Should be Author object
     private final List<String> authors;
     private String description;
     private List<String> genres;
